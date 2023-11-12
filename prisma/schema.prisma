@@ -46,6 +46,7 @@ model course {
   categoryId String
   category category @relation(fields: [categoryId], references: [id])
   enrollement enrollement[]
+  image String @default("null")
   createdAt    DateTime       @default(now())
   updateAt     DateTime       @default(now())
   delete Boolean @default(false)
