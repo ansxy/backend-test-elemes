@@ -5,7 +5,7 @@ import { categoryRoute } from './routes/category.routes'
 import { courseRoute } from './routes/course.routes'
 import { userRoute } from './routes/user.routes'
 
-const app: Application = express()
+export const app: Application = express()
 const port = process.env.PORT || 8000
 
 declare global {
@@ -35,3 +35,5 @@ app.get('/', (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`)
 })
+
+module.exports = { app }
