@@ -5,7 +5,7 @@ import { createNewRouter } from '../utils/router'
 export const categoryRoute = createNewRouter()
 
 categoryRoute.post('/', [verifyToken, requireAdmin], create)
-categoryRoute.get('/popular', popular)
+categoryRoute.get('/popular', verifyToken, popular)
 categoryRoute.get('/', get)
 
 module.exports = { categoryRoute }
