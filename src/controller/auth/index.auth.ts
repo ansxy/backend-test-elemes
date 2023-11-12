@@ -75,7 +75,14 @@ export const login = async (req: Request, res: Response) => {
       })
     }
   } catch (error) {
-    console.log(error)
+    if (error instanceof Error) {
+      res.status(401).json({
+        status: 'fail',
+        message: error.message
+      })
+    } else {
+      res.status(500).send(error)
+    }
   }
 }
 
@@ -112,7 +119,6 @@ export const getRefreshToken = async (req: Request, res: Response) => {
       }
     }
   } catch (error) {
-    console.log(error)
     res.status(500).send(error)
   }
 }
