@@ -97,8 +97,8 @@ export const countCourse = async () => {
 
   return {
     totalCount,
-    paidCourse: result.find((entry) => entry.price !== 0)?._count?._all || 0,
-    freeCourse: result.find((entry) => entry.price === 0)?._count?._all || 0
+    freeCourse: result.find((entry) => entry.price === 0)?._count?._all || 0,
+    paidCourse: totalCount - (result.find((entry) => entry.price === 0)?._count?._all as number)
   }
 }
 
