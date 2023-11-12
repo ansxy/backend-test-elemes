@@ -29,7 +29,11 @@ app.use('/category', categoryRoute)
 app.use('/course', courseRoute)
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World')
+  res.status(200).json({
+    author: 'Ansar Fadillah',
+    email: 'ansarfadillah17@gmail.com',
+    documentation: 'https://github.com/ansxy/backend-test-elemes/'
+  })
 })
 
 app.listen(port, () => {
