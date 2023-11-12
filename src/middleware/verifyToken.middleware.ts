@@ -69,7 +69,14 @@ export const verifyRefreshToken = async (req: UserRequest, res: Response, next: 
         secure: true,
         sameSite: 'none'
       })
-      res.set('Authorization', accessToken)
+      res.set('authorization', accessToken)
+      if (!accessToken) {
+        res.status(401).json({ error: 'Unauthorized' })
+      } else {
+        jwt.verify(accessToken, process.env.JWT_ACCESS_SECRET as Secret, async (err, decoded) => {
+          req.user = decoded
+        })
+      }
     }
     next()
   }
