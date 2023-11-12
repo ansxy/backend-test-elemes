@@ -1,0 +1,311 @@
+{
+	"info": {
+		"_postman_id": "2c438d05-2d24-4d8f-933b-cceb78f23e84",
+		"name": "Course",
+		"description": "API Documentation CRUD on category Endpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23102884-2c438d05-2d24-4d8f-933b-cceb78f23e84"
+	},
+	"item": [
+		{
+			"name": "Get Course , all,detail,sort",
+			"id": "c5cbd907-2588-4939-8a8f-ab0bf775e027",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": [
+						{
+							"key": "algorithm",
+							"value": "HS256",
+							"type": "string"
+						},
+						{
+							"key": "isSecretBase64Encoded",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "payload",
+							"value": "{}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "queryParamKey",
+							"value": "token",
+							"type": "string"
+						},
+						{
+							"key": "header",
+							"value": "{}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiMjRjMDAxMi1jM2I1LTQ4OWMtODM2ZS03Yjg0NTg4ODRhYTMiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTY5OTc3MzM4NywiZXhwIjoxNjk5NzczNDQ3fQ.SCg1p826ubQ1Xz6n6wl2YNZ7VQbMCEkXa4WQJgNz074",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Javascript Pemula\",\r\n    \"price\" : \"50000\",\r\n    \"description\" : \"Javascript Untuk Pemula Banget serius\",\r\n    \"categoryId\" : \"0bbae9ab-1876-4cde-97bd-7a9770ae86d5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/course/?sort=free",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"course",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4ac70d09-c55a-4605-ae85-269b4ec0628b",
+							"disabled": true
+						},
+						{
+							"key": "sort",
+							"value": "free"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Course By Name",
+			"id": "52391717-408a-4615-83a8-a72ca614b1b7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/course/search/?name=Javascript",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"course",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Javascript"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get New AccessToken",
+			"id": "74446f86-d645-4445-af81-75877678fd92",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/refresh-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Course",
+			"id": "2ae22593-dd31-41dd-abd4-c078284cdb08",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiNmVlNmFkNC0wYWI5LTRiZWYtYWJjNC00ODcyZGE3ZDgxZmYiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2OTk3NzY2MDcsImV4cCI6MTY5OTc3NjY2N30.WzwMrT1RYvACKU_lMSo9bUXsG3ztPcuVyaLZtT6CWYc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Java Pemula\",\r\n    \"description\" : \"Pemula banget ini Pemula banget ini Pemula banget ini Pemula banget ini Pemula banget ini \",\r\n    \"price\" : 500000\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/admin/course/94c450f0-b9ef-438c-874a-eed19ae74422",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"course",
+						"94c450f0-b9ef-438c-874a-eed19ae74422"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Simple Statistic",
+			"id": "15bdf13b-613d-47a9-8202-76b1b35bf439",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiNmVlNmFkNC0wYWI5LTRiZWYtYWJjNC00ODcyZGE3ZDgxZmYiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2OTk3Njk0ODQsImV4cCI6MTY5OTc2OTQ5OX0.HQEbFt0jr8CPz-pdm_XcwD3FqY_cve_ophvFLmbxYkQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/admin/simple-statistic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"simple-statistic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Course",
+			"id": "1aa4c5b7-6f7f-445f-9baa-0bdf268f0de7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiNmVlNmFkNC0wYWI5LTRiZWYtYWJjNC00ODcyZGE3ZDgxZmYiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2OTk3NzgzMTgsImV4cCI6MTY5OTc3ODM3OH0.9NU3Nl4tp14hpBHbskdpyonyCHkXYtuF50502MovrxM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/admin/course/94c450f0-b9ef-438c-874a-eed19ae74422",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"course",
+						"94c450f0-b9ef-438c-874a-eed19ae74422"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Course",
+			"id": "b83c7ffe-e0ac-4840-9e87-3e6dc88336cf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiNmVlNmFkNC0wYWI5LTRiZWYtYWJjNC00ODcyZGE3ZDgxZmYiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2OTk3NzgzMTgsImV4cCI6MTY5OTc3ODM3OH0.9NU3Nl4tp14hpBHbskdpyonyCHkXYtuF50502MovrxM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": " GA Banget in21521i 2,",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": " 612312,",
+							"type": "text"
+						},
+						{
+							"key": "description\"",
+							"value": " asli pemula banget ini suer to god,",
+							"type": "text"
+						},
+						{
+							"key": "categoryId",
+							"value": " 85faba44-f891-4fd0-923e-58a0f18e3644",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/admin/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"course"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "ae261f55-7fcd-4a96-bf53-417a3e1a722d",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23102884-ae261f55-7fcd-4a96-bf53-417a3e1a722d"
+	},
+	"item": [
+		{
+			"name": "Login ",
+			"id": "317630ea-6901-4fee-b1da-4ab427acbfeb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"212341@gmail.com\",\r\n    \"password\" : \"ansar123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register User",
+			"id": "7ebe7ef7-8d23-4dab-a28e-4eb805e2b2fe",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"ansar\",\r\n    \"email\" : \"212341@gmail.com\",\r\n    \"password\" : \"ansar123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Soft Delete User",
+			"id": "02dc58e0-e061-44dc-bbc6-788d18f14b0c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiNmVlNmFkNC0wYWI5LTRiZWYtYWJjNC00ODcyZGE3ZDgxZmYiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2OTk3MjQ1ODMsImV4cCI6MTY5OTcyNDg4M30.qqTWmIZPOkQJpbzyGB_0f8WqX9OVYDPxDoQAmkt__X0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/admin/user/387a9fdd-de90-4eec-b784-2141",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"admin",
+						"user",
+						"387a9fdd-de90-4eec-b784-2141"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

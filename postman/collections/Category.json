@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "a728d7ea-95e8-45a2-8343-e435008f4745",
+		"name": "Category",
+		"description": "API Documentation CRUD on category Endpoint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "23102884-a728d7ea-95e8-45a2-8343-e435008f4745"
+	},
+	"item": [
+		{
+			"name": "Create Category",
+			"id": "a1a05454-d118-4d0b-a5c8-439379d26dc0",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"python\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"category"
+					]
+				},
+				"description": "### Description\n\nThis API endpoint allows an admin user to create a new category.EndFragment\n\n### Request\n\n- Method : POST\n- **Authentication:** Requires a valid user token with admin privileges.\n    \n\n#### Request Body\n\n`{ \"name\": string }`\n\n- `name` (string, required): The name of the category to be created.\n    \n\n#### Response\n\n- Success Response (201 Created)\n    \n\n`{ \"status\": \"success\", \"data\": { // Newly created category information } }`\n\n- Error Responses\n    - 400 Bad Request  \n        If the request body is missing or the data is not of the correct type.  \n        `{ \"status\": \"fail\", \"message\": \"Data name must be included and must be of type string\" }`\n    - 500 Internal Server Error  \n        If there is an internal server error during the category creation process.  \n        `{ \"error\": \"Internal Server Error Message\" }`"
+			},
+			"response": []
+		},
+		{
+			"name": "Popular Category",
+			"id": "d1192a5e-ccb0-4170-b329-86f561dc65a4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiNmVlNmFkNC0wYWI5LTRiZWYtYWJjNC00ODcyZGE3ZDgxZmYiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2OTk4MDQxNzYsImV4cCI6MTY5OTgwNTk3Nn0.1KYWrGxlT_yxAJaPzIeqIT7cYtXG5rfe4sEo83IJkHY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/category/popular",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"category",
+						"popular"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Category",
+			"id": "de52cba9-dd18-4352-b26a-0e450c510092",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/category",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"category"
+					]
+				},
+				"description": "### Description\n\nThis API endpoint allows users to retrieve a list categories.\n\n### Request\n\n- Method: GET\n    \n- Authentication: Requires a valid user token.\n    \n\n#### Response\n\n- Success Response (200 OK)\n    \n\n`{ \"status\": \"success\", \"data\": [ // List of all categories ] }`\n\n- Error Responses\n    \n    - 500 Internal Server Error  \n        If there is an internal server error during the retrieval of popular categories.  \n        `{ \"error\": \"Internal Server Error Message\" }`"
+			},
+			"response": []
+		}
+	]
+}
