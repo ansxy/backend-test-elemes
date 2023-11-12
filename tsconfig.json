@@ -4,14 +4,11 @@
       "module": "commonjs",
       "outDir": "./dist",
       "baseUrl": "./",
-      "paths": {
-        "@/*" : ["src/*"]
-      },
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true
     },
-    "include": ["src/**/*.ts"],
+    "include": ["src/**/*.ts","__test__/**/*.ts"],
     "exclude": ["node_modules"]
   }
