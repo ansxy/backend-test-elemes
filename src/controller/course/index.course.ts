@@ -60,8 +60,8 @@ export const create = async (req: Request, res: Response) => {
   try {
     const { name, price, description, categoryId }: course = req.body
     const numericPrice = parseFloat(price.toString())
-    const data = await createCourse(name, numericPrice, description, categoryId, req.file?.filename as string)
     const image = await cloudUploud(req.file?.path as string)
+    const data = await createCourse(name, numericPrice, description, categoryId, image.url)
     res.status(201).json({
       status: 'success',
       data: {
@@ -79,6 +79,7 @@ export const create = async (req: Request, res: Response) => {
         message: error.message
       })
     } else {
+      console.log(error)
       res.status(500).json({
         error
       })
