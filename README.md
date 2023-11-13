@@ -4,7 +4,7 @@
 
 This repository contains the backend code for an online learning platform. The documentation provides instructions for installation, API usage, and details about user authentication and admin user management.
 
-Live Heroku : https://elemes-backend-intern-test-2005bcca088a.herokuapp.com/
+Live Heroku : 
 
 ## Installation
 
